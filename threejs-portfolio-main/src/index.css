@@ -19,7 +19,8 @@ body {
   }
 
   .head-text {
-    @apply sm:text-4xl text-3xl font-semibold text-gray_gradient;
+    @apply sm:text-4xl text-3xl font-semibold text-cyber-green uppercase tracking-widest font-terminal;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
   }
 
   .nav-ul {
@@ -39,12 +40,31 @@ body {
   }
 
   .text-gray_gradient {
-    @apply bg-gradient-to-r from-[#BEC1CF] from-60% via-[#D5D8EA] via-60% to-[#D5D8EA] to-100% bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-cyber-green via-cyber-blue to-cyber-purple bg-clip-text text-transparent;
+  }
+
+  /* custom-scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-cyber-dark;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-cyber-green/20 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-cyber-green/40 shadow-[0_0_10px_#00FF41];
   }
 
   /* button component */
   .btn {
-    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300  transition-all active:scale-95 text-white mx-auto;
+    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-cyber-dark border border-cyber-green/30 transition-all active:scale-95 text-cyber-green mx-auto uppercase font-terminal tracking-widest hover:bg-cyber-green/10 hover:border-cyber-green;
+    box-shadow: inset 0 0 10px rgba(0, 255, 65, 0.05);
   }
 
   .btn-ping {

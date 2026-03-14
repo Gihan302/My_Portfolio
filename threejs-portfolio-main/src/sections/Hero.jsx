@@ -1,14 +1,39 @@
-import { Suspense } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useMediaQuery } from 'react-responsive';
 import { PerspectiveCamera, OrbitControls, ContactShadows } from '@react-three/drei';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import CanvasLoader from '../components/Loading.jsx';
 import CyberGlobe from '../components/CyberGlobe.jsx';
 import CyberPanel from '../components/CyberPanel.jsx';
 import HackerTerminal from '../components/HackerTerminal.jsx';
 import MatrixRain from '../components/MatrixRain.jsx';
+
+const TypewriterText = ({ text }) => {
+  const [displayedText, setDisplayedText] = useState('');
+  
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setDisplayedText(text.slice(0, i));
+      i++;
+      if (i > text.length) clearInterval(interval);
+    }, 50);
+    return () => clearInterval(interval);
+  }, [text]);
+
+  return (
+    <span className="relative inline-block">
+      {displayedText}
+      <motion.span
+        animate={{ opacity: [0, 1, 0] }}
+        transition={{ duration: 0.8, repeat: Infinity }}
+        className="inline-block w-[2px] h-[1em] bg-cyber-blue ml-1 align-middle"
+      />
+    </span>
+  );
+};
 
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -35,18 +60,34 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="hero_tag text-white font-terminal uppercase tracking-tighter"
+          className="hero_tag text-white font-terminal uppercase tracking-tighter hover:animate-glitch cursor-default"
         >
           GIHAN <span className="text-cyber-green">CHINTHAKA</span>
         </motion.h1>
-        <motion.p 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-center text-cyber-blue font-terminal text-sm sm:text-lg"
+          className="text-center relative"
         >
-          [ CYBERSECURITY ENTHUSIAST | ETHICAL HACKER | CS STUDENT ]
-        </motion.p>
+          <div className="text-cyber-blue font-terminal text-sm sm:text-lg inline-block relative group">
+            <TypewriterText text="[ CYBERSECURITY ENTHUSIAST | ETHICAL HACKER | CS STUDENT ]" />
+            
+            {/* Horizontal Scanning Line */}
+            <motion.div 
+              className="absolute left-0 right-0 h-[2px] bg-cyber-blue/40 shadow-[0_0_15px_#00D4FF] z-20 pointer-events-none"
+              animate={{ 
+                top: ['0%', '100%', '0%'],
+                opacity: [0, 1, 0]
+              }}
+              transition={{ 
+                duration: 4, 
+                repeat: Infinity, 
+                ease: "linear" 
+              }}
+            />
+          </div>
+        </motion.div>
       </div>
 
       {/* 3D Scene */}

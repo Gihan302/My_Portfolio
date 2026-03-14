@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Globe from 'react-globe.gl';
+import { motion } from 'framer-motion';
 import Button from '../components/Button.jsx';
+import { coreCompetencies } from '../constants/index.js';
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
@@ -22,28 +24,41 @@ const About = () => {
             <img src="assets/grid1.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain opacity-50 grayscale hover:grayscale-0 transition-all" />
 
             <div>
-              <p className="grid-headtext text-cyber-green uppercase">&gt; OPERATIVE_PROFILE</p>
-              <p className="grid-subtext text-cyber-green/70">
-                Hi, I'm Gihan. A dedicated Computer Science student specializing in Cybersecurity. I focus on identifying vulnerabilities and securing digital landscapes.
-              </p>
+              <p className="grid-headtext text-cyber-green uppercase tracking-widest">&gt; OPERATIVE_PROFILE</p>
+              <div className="grid-subtext text-cyber-green/70 space-y-4 text-sm leading-relaxed">
+                <p>
+                  Skilled and adaptable software developer with a strong passion for solving complex technical challenges and building impactful digital solutions. 
+                  Currently pursuing a degree in Computer Science, with experience across full-stack development, cybersecurity concepts, and intelligent systems.
+                </p>
+                <p className="hidden xl:block">
+                  Proactive, self-motivated, and highly committed to continuous learning. Known for strong focus, discipline, and the ability to quickly adapt to new tools and frameworks.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="col-span-1 xl:row-span-3">
-          <div className="grid-container border-cyber-green/20 bg-cyber-dark/60">
-            <div className="flex flex-wrap gap-2 mb-4">
-              {['Linux', 'Wireshark', 'Nmap', 'Burp Suite', 'Python', 'Metasploit', 'JS', 'React'].map((skill) => (
-                <span key={skill} className="px-2 py-1 border border-cyber-green/30 text-cyber-green text-[10px] uppercase">
-                  {skill}
-                </span>
+        <div className="col-span-1 xl:row-span-3" id="competencies">
+          <div className="grid-container border-cyber-green/20 bg-cyber-dark/60 overflow-hidden">
+            <div className="flex flex-col gap-4 overflow-y-auto max-h-[400px] custom-scrollbar pr-2">
+              {coreCompetencies.map((category, idx) => (
+                <div key={idx} className="space-y-2">
+                  <p className="text-cyber-blue text-[10px] uppercase tracking-widest font-bold">[{category.category}]</p>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <span key={skill} className="px-2 py-1 border border-cyber-green/30 text-cyber-green text-[10px] uppercase hover:bg-cyber-green/10 transition-colors cursor-default">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
 
-            <div>
-              <p className="grid-headtext text-cyber-green uppercase">&gt; TECH_STACK</p>
+            <div className="mt-4">
+              <p className="grid-headtext text-cyber-green uppercase tracking-widest">&gt; CORE_COMPETENCIES</p>
               <p className="grid-subtext text-cyber-green/70">
-                My toolkit includes industry-standard security tools and modern development frameworks to build and break secure systems.
+                A diverse technical arsenal focused on secure, efficient, and scalable solution delivery.
               </p>
             </div>
           </div>
@@ -91,7 +106,7 @@ const About = () => {
               <p className="grid-subtext text-center text-cyber-green/50 uppercase">Establish Connection</p>
               <div className="copy-container border border-cyber-green/30 p-4 rounded hover:bg-cyber-green/5 transition-colors" onClick={handleCopy}>
                 <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" className="invert sepia-[1] hue-rotate-[100deg]" />
-                <p className="lg:text-xl md:text-lg font-medium text-cyber-green">gihan@cyber-ops.sec</p>
+                <p className="lg:text-xl md:text-lg font-medium text-cyber-green">gihanc302@gmail.com</p>
               </div>
             </div>
           </div>
