@@ -35,7 +35,7 @@ const HackerTerminal = () => {
       if (args === 'cv' || args === 'resume') {
         // Trigger download - point to a real file in public folder if you have one
         const link = document.createElement('a');
-        link.href = '/assets/Gihan_Chinthaka CV.pdf'; // Path to your CV in public/assets
+        link.href = 'assets/Gihan_Chinthaka CV.pdf'; // Path to your CV in public/assets
         link.download = 'Gihan_Chinthaka CV.pdf';
         document.body.appendChild(link);
         link.click();

@@ -5,7 +5,7 @@ import gsap from 'gsap';
 
 const Target = (props) => {
   const targetRef = useRef();
-  const { scene } = useGLTF('/models/animations/BlocksSkyline.glb');
+  const { scene } = useGLTF('models/animations/BlocksSkyline.glb');
 
   useGSAP(() => {
     gsap.to(targetRef.current.position, {

@@ -100,7 +100,7 @@ const Contact = () => {
               disabled={loading}
             >
               {loading ? 'TRANSMITTING...' : 'INITIATE_UPLINK'}
-              <img src="/assets/arrow-up.png" alt="arrow-up" className="w-4 h-4 invert sepia-[1] hue-rotate-[100deg]" />
+              <img src="assets/arrow-up.png" alt="arrow-up" className="w-4 h-4 invert sepia-[1] hue-rotate-[100deg]" />
             </button>
           </form>
         </div>

@@ -67,17 +67,17 @@ const Projects = () => {
               target="_blank"
               rel="noreferrer">
               <p>Access Repository</p>
-              <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3 invert sepia-[1] hue-rotate-[100deg]" />
+              <img src="assets/arrow-up.png" alt="arrow" className="w-3 h-3 invert sepia-[1] hue-rotate-[100deg]" />
             </a>
           </div>
 
           <div className="flex justify-between items-center mt-7">
             <button className="w-12 h-12 flex items-center justify-center border border-cyber-green/30 hover:bg-cyber-green/10 transition-all rounded-full" onClick={() => handleNavigation('previous')}>
-              <img src="/assets/left-arrow.png" alt="left arrow" className="w-4 h-4 invert sepia-[1] hue-rotate-[100deg]" />
+              <img src="assets/left-arrow.png" alt="left arrow" className="w-4 h-4 invert sepia-[1] hue-rotate-[100deg]" />
             </button>
 
             <button className="w-12 h-12 flex items-center justify-center border border-cyber-green/30 hover:bg-cyber-green/10 transition-all rounded-full" onClick={() => handleNavigation('next')}>
-              <img src="/assets/right-arrow.png" alt="right arrow" className="w-4 h-4 invert sepia-[1] hue-rotate-[100deg]" />
+              <img src="assets/right-arrow.png" alt="right arrow" className="w-4 h-4 invert sepia-[1] hue-rotate-[100deg]" />
             </button>
           </div>
         </div>

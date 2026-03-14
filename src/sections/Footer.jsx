@@ -9,13 +9,13 @@ const Footer = () => {
 
       <div className="flex gap-3">
         <div className="w-10 h-10 rounded-full border border-cyber-green/20 flex justify-center items-center bg-cyber-green/5 hover:bg-cyber-green/20 transition-all cursor-pointer">
-          <img src="/assets/github.svg" alt="github" className="w-1/2 h-1/2 invert sepia-[1] hue-rotate-[100deg]" />
+          <img src="assets/github.svg" alt="github" className="w-1/2 h-1/2 invert sepia-[1] hue-rotate-[100deg]" />
         </div>
         <div className="w-10 h-10 rounded-full border border-cyber-green/20 flex justify-center items-center bg-cyber-green/5 hover:bg-cyber-green/20 transition-all cursor-pointer">
-          <img src="/assets/twitter.svg" alt="twitter" className="w-1/2 h-1/2 invert sepia-[1] hue-rotate-[100deg]" />
+          <img src="assets/twitter.svg" alt="twitter" className="w-1/2 h-1/2 invert sepia-[1] hue-rotate-[100deg]" />
         </div>
         <div className="w-10 h-10 rounded-full border border-cyber-green/20 flex justify-center items-center bg-cyber-green/5 hover:bg-cyber-green/20 transition-all cursor-pointer">
-          <img src="/assets/instagram.svg" alt="instagram" className="w-1/2 h-1/2 invert sepia-[1] hue-rotate-[100deg]" />
+          <img src="assets/instagram.svg" alt="instagram" className="w-1/2 h-1/2 invert sepia-[1] hue-rotate-[100deg]" />
         </div>
       </div>
 
